@@ -1,11 +1,7 @@
-# Use an official Nginx image as the base
+# Use a lightweight web server
 FROM nginx:alpine
 
-# Remove the default Nginx static content
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy your webpage files to the Nginx folder
+# Copy custom webpage files to nginx folder
 COPY . /usr/share/nginx/html
 
-# Expose port 80
 EXPOSE 80
